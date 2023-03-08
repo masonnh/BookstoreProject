@@ -1,0 +1,14 @@
+﻿@{
+}
+
+@model IEnumerable<string>
+
+<div class="d-grid gap-2">
+    <a asp-controller="Home" asp-action="Index" asp-route-bookgenre="" asp-route-pageNum="1" class="btn btn-outline-secondary">Home</a>
+
+    @foreach (string genre in Model)
+    {
+        <a asp-controller="Home" asp-action="Index" asp-route-bookgenre="@genre" asp-route-pageNum="1" 
+           class="btn @(ViewBag.SelectedGenre == @genre ? "btn-primary" : "btn-outline-secondary")">@genre</a>
+    }
+</div>
